@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../../css/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+</head>
+<body>
+    <div class="auth-page">
+
+    <div class="auth-box">
+
+        <h2>Chỉnh sửa</h2>
+
+        <div class="input-group">
+            <label>Tên bài</label>
+            <input type="text" id="lesson-name" placeholder="Nhập tên bài mới" required>
+        </div>
+
+        <div class="input-group">
+            <label>Tóm tắt nội dung bài</label>
+            <input type="text" id="lesson-content" placeholder="Nhập tóm tắt mới" required>
+        </div>
+
+        <div class="input-group">
+            <label>Link video</label>
+            <input type="url" id="lesson-url" placeholder="Dán link video mới (hoặc để trống nếu không có video)">
+        </div>
+
+        <button type="button" onclick="updateLesson()" class="save-btn btn-outline">
+            Chỉnh sửa
+        </button>
+
+    </div>
+
+</div>
+
+    <script src="https://www.gstatic.com/firebasejs/12.13.0/firebase-app-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/12.13.0/firebase-auth-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/12.13.0/firebase-firestore-compat.js"></script>
+  
+  <script src="../../js/firebase-config.js"></script>
+  <script src="../../js/auth.js"></script>
+
+<!-- <script src="../../js/navbar2.js"></script> -->
+<script src="../../js/edit-lesson.js"></script>
+</body>
+</html>

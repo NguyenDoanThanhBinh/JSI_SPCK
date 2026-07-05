@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <title>Thêm bài học</title>
+
+    <link rel="stylesheet" href="../css/style.css">
+
+    <style>
+        body {
+            font-family: Arial;
+            background: #f5f7ff;
+            padding: 30px;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: auto;
+            background: white;
+            padding: 20px;
+            border-radius: 12px;
+        }
+
+        h1 {
+            margin-bottom: 20px;
+        }
+
+        input, select {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 10px;
+            border-radius: 8px;
+            border: 1px solid #ddd;
+        }
+
+        button {
+            padding: 10px 15px;
+            background: #1d4ed8;
+            color: white;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+        }
+
+        table {
+            width: 100%;
+            margin-top: 20px;
+            border-collapse: collapse;
+        }
+
+        th, td {
+            padding: 10px;
+            border-bottom: 1px solid #eee;
+            text-align: left;
+        }
+
+        .delete-btn {
+            background: red;
+        }
+    </style>
+</head>
+
+<body>
+
+<div class="container">
+
+    <h1>📚 Quản lý bài học</h1>
+
+    <!-- CHỌN MÔN -->
+    <select id="mon-select">
+        <option value="toan">Toán học</option>
+        <option value="van">Ngữ văn</option>
+        <option value="anh">Tiếng Anh</option>
+    </select>
+
+    <!-- FORM -->
+    <div id="lesson-form">
+        <input type="text" id="lesson-name" placeholder="Tên bài học">
+
+        <button onclick="handleAddLesson()">➕ Thêm bài học</button>
+    </div>
+
+    <!-- DANH SÁCH -->
+    <table id="product-list">
+        <thead>
+            <tr>
+                <th>Tên bài học</th>
+                <th>Hành động</th>
+            </tr>
+        </thead>
+
+        <tbody></tbody>
+    </table>
+
+</div>
+
+<script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-app.js"></script>
+<script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-firestore.js"></script>
+
+<script>
+    // TODO: Firebase config của bạn
+    firebase.initializeApp({
+        apiKey: "...",
+        authDomain: "...",
+        projectId: "..."
+    });
+
+    const db = firebase.firestore();
+</script>
+
+<script src="../js/products.js"></script>
+
+<script>
+    // wrapper fix lỗi thiếu event
+    function handleAddLesson() {
+        const mon = document.getElementById("mon-select").value;
+        addLesson(mon);
+    }
+</script>
+
+</body>
+</html>
