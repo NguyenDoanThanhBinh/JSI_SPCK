@@ -18,6 +18,16 @@ document.addEventListener("DOMContentLoaded", () => {
             ){
                 document.querySelector(".toan-kc").classList.add("active");
             }
+            if(
+                currentPage === "van-kc_admin.html"
+            ){
+                document.querySelector(".van-kc").classList.add("active");
+            }
+            if(
+                currentPage === "anh-kc_admin.html"
+            ){
+                document.querySelector(".anh-kc").classList.add("active");
+            }
 
             // ✅ CHỖ QUAN TRỌNG: đảm bảo DOM đã tồn tại
             auth.onAuthStateChanged((user) => {
