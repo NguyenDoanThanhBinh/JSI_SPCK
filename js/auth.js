@@ -31,6 +31,10 @@ auth.onAuthStateChanged(async (user) => {
     } else {
         window.currentUser = null;
         console.log("👤 Chưa đăng nhập (Guest)");
+        if ((currentPage === "admin.html" || window.location.pathname.includes("/admin/"))) {
+            alert("Bạn không có quyền truy cập trang Admin!");
+            window.location.href = "../general/home.html";
+        }
     }
 });
 
