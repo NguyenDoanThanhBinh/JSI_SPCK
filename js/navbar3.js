@@ -57,7 +57,7 @@ document.addEventListener("click", (e) => {
     } 
     // Nếu chưa đăng nhập → chuyển login
     else {
-        window.location.href = "login.html";
+        window.location.href = "https://nguyendoanthanhbinh.github.io/JSI_SPCK/html/general/login.html";
     }
 });
 });
