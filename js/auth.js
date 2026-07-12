@@ -36,6 +36,32 @@ auth.onAuthStateChanged(async (user) => {
             window.location.href = "../general/home.html";
         }
     }
+    const button = document.querySelector(".btn");
+    const userName = document.getElementById("user-name");
+    if(user){
+
+        const doc = await db.collection("users")
+                            .doc(user.uid)
+                            .get();
+
+        const data = doc.data();
+
+        userName.style.display = "block";
+        userName.innerHTML = "👋 " + data.fullName;
+
+        button.classList.remove("login-btn");
+        button.classList.add("logout-btn");
+        button.innerHTML = "Đăng xuất";
+    }
+    else{
+
+        userName.style.display = "none";
+        userName.innerHTML = "";
+
+        button.classList.remove("logout-btn");
+        button.classList.add("login-btn");
+        button.innerHTML = "Đăng nhập";
+    }
 });
 
 // Đăng ký tài khoản
